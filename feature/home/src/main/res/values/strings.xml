@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="_10_day_forecast">10-DAY FORECAST</string>
+    <string name="calendar_icon">Calendar icon</string>
+    <string name="uv_index">UV INDEX</string>
+    <string name="sun_icon">Sun Icon</string>
+    <string name="air_icon">Wind Icon</string>
+    <string name="wind">WIND</string>
+    <string name="water_drop_icon">Rainfall Icon</string>
+    <string name="rainfall">RAINFALL</string>
+    <string name="sunset">SUNSET</string>
+    <string name="sunset_icon">Sunset Icon</string>
+    <string name="feels_like">FEELS LIKE</string>
+    <string name="feels_like_icon">Feels Like Icon</string>
+    <string name="temp_icon">Thermostat Icon</string>
+    <string name="humidity">HUMIDITY</string>
+    <string name="percent_icon">Percent Icon</string>
+    <string name="visibility">VISIBILITY</string>
+    <string name="visibility_icon">Visibility Icon</string>
+    <string name="pressure">PRESSURE</string>
+    <string name="pressure_icon">Pressure Icon</string>
+</resources>
