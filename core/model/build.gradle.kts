@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.olubankeeboda.core.model"
+    namespace = "com.olubankeeboda.weathertoday.core.model"
 
 }
 
