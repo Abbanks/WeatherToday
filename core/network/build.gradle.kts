@@ -3,7 +3,6 @@ plugins {
     id("weathertoday.android.library.jacoco")
     id("weathertoday.android.hilt")
     id("kotlinx-serialization")
-//    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -20,10 +19,6 @@ android {
     }
 }
 
-secrets {
-    defaultPropertiesFileName = "secrets.defaults.properties"
-}
-
 dependencies {
     implementation(project(":core:common"))
     implementation(project(":core:model"))
@@ -36,6 +31,7 @@ dependencies {
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.kotlin.serialization)
 
+    testImplementation(libs.mockwebserver)
     testImplementation(project(":core:testing"))
-
+    testImplementation(libs.truth)
 }
