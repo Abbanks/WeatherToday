@@ -1,30 +1,35 @@
 package com.olubankeeboda.weathertoday.core.network.model
 
-import kotlinx.serialization.SerialName
+import com.olubankeeboda.weathertoday.core.network.model.util.NumberSerializer
+import com.olubankeeboda.weathertoday.core.network.model.util.OffsetDateTimeSerializer
+import kotlinx.serialization.Contextual
 import kotlinx.serialization.Serializable
+import java.time.OffsetDateTime
 
 @Serializable
 data class Values(
-    @SerialName("cloudBase")
-    val cloudBase: Double?,
-    @SerialName("cloudCeiling")
-    val cloudCeiling: Double?,
-    @SerialName("cloudCover")
-    val cloudCover: Double?,
-    @SerialName("precipitationIntensity")
-    val precipitationIntensity: Double?,
-    @SerialName("precipitationType")
-    val precipitationType: Int?,
-    @SerialName("temperature")
-    val temperature: Double?,
-    @SerialName("temperatureApparent")
-    val temperatureApparent: Double?,
-    @SerialName("weatherCode")
-    val weatherCode: Int?,
-    @SerialName("windDirection")
-    val windDirection: Double?,
-    @SerialName("windGust")
-    val windGust: Double?,
-    @SerialName("windSpeed")
-    val windSpeed: Double?
+    val dewPoint: Double,
+    val humidity: Double,
+    @Contextual
+    @Serializable(with = NumberSerializer::class)
+    val iceAccumulation: Number,
+    val precipitationProbability: Int,
+    @Serializable(with = NumberSerializer::class)
+    val precipitationIntensity: Number,
+    val precipitationType: Int,
+    val pressureSurfaceLevel: Double,
+    @Serializable(with = NumberSerializer::class)
+    val rainAccumulation: Number,
+    @Serializable(with = NumberSerializer::class)
+    val snowAccumulation: Number,
+    @Serializable(with = OffsetDateTimeSerializer::class) val sunriseTime: OffsetDateTime,
+    @Serializable(with = OffsetDateTimeSerializer::class) val sunsetTime: OffsetDateTime,
+    val temperature: Double,
+    val temperatureApparent: Double,
+    @Serializable(with = NumberSerializer::class)
+    val visibility: Number,
+    val weatherCode: Int,
+    val windDirection: Double,
+    val windGust: Double,
+    val windSpeed: Double
 )

@@ -1,12 +1,11 @@
 package com.olubankeeboda.weathertoday.core.network.model
 
-import kotlinx.serialization.SerialName
+import com.olubankeeboda.weathertoday.core.network.model.util.OffsetDateTimeSerializer
 import kotlinx.serialization.Serializable
+import java.time.OffsetDateTime
 
 @Serializable
 data class Interval(
-    @SerialName("startTime")
-    val startTime: String?,
-    @SerialName("values")
-    val values: Values?
+    @Serializable(OffsetDateTimeSerializer::class) val startTime: OffsetDateTime,
+    val values: Values
 )

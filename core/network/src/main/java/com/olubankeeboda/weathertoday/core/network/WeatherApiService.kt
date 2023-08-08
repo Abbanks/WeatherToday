@@ -1,21 +1,16 @@
 package com.olubankeeboda.weathertoday.core.network
 
-import com.olubankeeboda.weathertoday.core.network.model.WeatherNetworkResponse
+import com.olubankeeboda.weathertoday.core.network.model.WeatherApiNetworkResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface WeatherApiService {
     @GET(
-        value = "timelines"
+        value = ApiConstants.WEATHER_ENDPOINT
     )
     suspend fun getWeatherForecast(
-        @Query(value = "apikey", encoded = true) apikey: String?,
-        @Query(value = "location", encoded = true) location: String?,
-        @Query(value = "units") units: String?,
-        @Query(value = "fields", encoded = true) fields: String?,
-        @Query(value = "timesteps",encoded = true) timesteps: String?,
-        @Query(value = "now", encoded = true) now: String?,
-        @Query(value = "timezone", encoded = true) timezone: String?
-    ): WeatherNetworkResponse
-
+        @Query(value = ApiParameters.LOCATION, encoded = true) location: String?,
+        @Query(value = ApiParameters.UNITS) units: String?,
+        @Query(value = ApiParameters.TIME_ZONE, encoded = true) timezone: String?
+    ): WeatherApiNetworkResponse
 }
