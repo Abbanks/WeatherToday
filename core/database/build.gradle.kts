@@ -9,7 +9,9 @@ android {
     namespace = "com.olubankeeboda.weathertoday.core.database"
 
 }
-
+hilt {
+    enableAggregatingTask = true
+}
 dependencies {
     implementation(project(":core:model"))
 

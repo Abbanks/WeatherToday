@@ -18,11 +18,12 @@ import androidx.compose.material.icons.outlined.CalendarMonth
  */
 object WtIcons {
     val CalendarMonth = Icons.Outlined.CalendarMonth
-    val UVIndex = Icons.Filled.WbSunny
-    val Sunset = Icons.Filled.WbTwilight
+    val Temperature = Icons.Filled.Thermostat
+    val FeelsLike = Icons.Filled.Thermostat
+   // val Sunset = Icons.Filled.WbTwilight
     val Wind = Icons.Filled.Air
     val Rainfall = Icons.Filled.WaterDrop
-    val FeelsLike = Icons.Filled.Thermostat
+
     val Humidity = Icons.Filled.Percent
     val Visibility = Icons.Filled.Visibility
     val Pressure = Icons.Filled.Radar

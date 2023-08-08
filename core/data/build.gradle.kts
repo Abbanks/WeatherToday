@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.olubankeeboda.weahertoday.core.data"
+    namespace = "com.olubankeeboda.weathertoday.core.data"
     testOptions {
         unitTests {
             isIncludeAndroidResources = true

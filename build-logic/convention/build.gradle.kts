@@ -1,15 +1,8 @@
-//import org.gradle.kotlin.dsl.`kotlin-dsl`
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 
 plugins {
     `kotlin-dsl`
 }
-
-//repositories {
-//    google()
-//    mavenCentral()
-//}
 
 group = "com.olubankeeboda.weathertoday.buildlogic"
 
@@ -25,8 +18,6 @@ tasks.withType<KotlinCompile>().configureEach {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
 }
-
-
 
 dependencies {
     compileOnly(libs.android.gradlePlugin)
@@ -82,7 +73,6 @@ gradlePlugin {
             id = "weathertoday.android.application.firebase"
             implementationClass = "AndroidApplicationFirebaseConventionPlugin"
         }
-
         register("jvmLibrary") {
             id = "weathertoday.jvm.library"
             implementationClass = "JvmLibraryConventionPlugin"
