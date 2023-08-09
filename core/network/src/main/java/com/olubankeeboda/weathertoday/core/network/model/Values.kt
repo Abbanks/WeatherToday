@@ -2,7 +2,6 @@ package com.olubankeeboda.weathertoday.core.network.model
 
 import com.olubankeeboda.weathertoday.core.network.model.util.NumberSerializer
 import com.olubankeeboda.weathertoday.core.network.model.util.OffsetDateTimeSerializer
-import kotlinx.serialization.Contextual
 import kotlinx.serialization.Serializable
 import java.time.OffsetDateTime
 
@@ -10,9 +9,8 @@ import java.time.OffsetDateTime
 data class Values(
     val dewPoint: Double,
     val humidity: Double,
-    @Contextual
     @Serializable(with = NumberSerializer::class)
-    val iceAccumulation: Number,
+    val iceAccumulation: Number = 0.0,
     val precipitationProbability: Int,
     @Serializable(with = NumberSerializer::class)
     val precipitationIntensity: Number,

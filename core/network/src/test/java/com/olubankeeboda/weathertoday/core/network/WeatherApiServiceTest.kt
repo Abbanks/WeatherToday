@@ -49,16 +49,11 @@ class WeatherApiServiceTest() {
     }
 
     @Test
-    fun testGetWeatherEndpointCorrectly() = runTest(testDispatcher) {
+    fun testGetWeatherEndpointCorrectlyAndDeserializationOfWeatherValues() = runTest(testDispatcher) {
 
         // Set up test data
         val location = arrayOf(40.758, -73.985).joinToString(",")
         val units = "metric"
-        val fields = arrayOf(
-            "temperature,precipitationIntensity,precipitationType,windSpeed,windGust," + "windDirection,temperatureApparent,cloudCover,cloudBase,cloudCeiling," + "weatherCode"
-        ).joinToString(",")
-        val timesteps = arrayOf("current,1h,1d").joinToString(",")
-        val now = "moment.utc()"
         val timezone = "America/New_York"
 
         // Mock the server response
@@ -79,18 +74,18 @@ class WeatherApiServiceTest() {
                     values = Values(
                         dewPoint = 22.02,
                         humidity = 88.82,
-                        iceAccumulation = 0,
-                        precipitationIntensity = 0,
+                        iceAccumulation = 0.toDouble(),
+                        precipitationIntensity = 0.toDouble(),
                         precipitationProbability = 0,
                         precipitationType = 1,
                         pressureSurfaceLevel = 1010.75,
-                        rainAccumulation = 0,
-                        snowAccumulation = 0,
+                        rainAccumulation = 0.toDouble(),
+                        snowAccumulation = 0.toDouble(),
                         sunriseTime = OffsetDateTime.parse("2023-07-13T09:48:00Z"),
                         sunsetTime = OffsetDateTime.parse("2023-07-14T00:15:00Z"),
                         temperature = 31.85,
                         temperatureApparent = 34.16,
-                        visibility = 16,
+                        visibility = 16.toDouble(),
                         weatherCode = 1000,
                         windDirection = 199.89,
                         windGust = 12.71,
@@ -100,6 +95,7 @@ class WeatherApiServiceTest() {
             )
         )
 
+        //Test Deserialization of Weather Values
         assertEquals(
             expected = expected.intervals.first(),
             actual = apiResponse.data.timelines.first().intervals.first(),
